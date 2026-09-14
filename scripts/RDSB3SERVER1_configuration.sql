@@ -1,6 +1,5 @@
 ---------------------------------------------------------------------------------------
  --verify that the query window is connected to SERVER1
- -- Avoids creating the Database in a wrong Instance
 ---------------------------------------------------------------------------------------
 SELECT
     @@SERVERNAME AS ServerName,
