@@ -19,22 +19,21 @@ CREATE LOGIN RDSB3L23
 WITH PASSWORD = 'Rdsb3_L23#2026!';
 GO
 
---------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 --RDSB3SERVER2 security configuration
---------------------------------------------------
---creating users for each login: Mapping users to have access on their assigned databases.
-
-USE RDSB3DATABASE21; -- Making sure we are using the right database
+--configuring the first 3 databases( RDSB3DATABASE21, RDSB3DATABASE22, RDSB3DATABASE23 ) on RDSB3SERVER2
+-------------------------------------------------------------------------------------------------------------
+USE RDSB3DATABASE21; -- Making sure we are using the right/matching database
 GO
 CREATE USER RDSB3L21 FOR LOGIN RDSB3L21;
 GO
 
-USE RDSB3DATABASE22; -- Making sure we are using the right database
+USE RDSB3DATABASE22; -- Making sure we are using the right/matching database
 GO
 CREATE USER RDSB3L22 FOR LOGIN RDSB3L22;
 GO
 
-USE RDSB3DATABASE23; -- Making sure we are using the right database
+USE RDSB3DATABASE23; -- Making sure we are using the right/matching database
 GO
 CREATE USER RDSB3L23 FOR LOGIN RDSB3L23;
 GO
