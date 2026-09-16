@@ -1,4 +1,4 @@
-Phase 14 — Transactional Replication Configuration
+Phase 11 — Transactional Replication Configuration
 
 Objective
 
@@ -25,7 +25,7 @@ RDSB3DATABASE11_REPLICA
 
 >> Note: The provided requirement states that RDSB3DATABASE11 should replicate “from RDSB3SERVER1 to RDSB3SERVER3,” while another bullet identifies RDSB3SERVER1 as the Subscriber. The implemented topology uses RDSB3SERVER3 as Subscriber, consistent with the stated SERVER1 → SERVER3 data flow.
 
-14.1 Configure the Distributor
+11.1 Configure the Distributor
 
 RDSB3SERVER2 was configured as the Distributor using the Configure Distribution Wizard.
 
@@ -47,7 +47,7 @@ The Distribution Wizard completed successfully with:
 
 Evidence: 01_Distributor_Configuration_Success.png
 
-14.2 Prepare the Publication Database
+11.2 Prepare the Publication Database
 
 The source database was:
 
@@ -86,7 +86,7 @@ The three records provided an initial dataset for validating snapshot initializa
 
 Evidence: 03_Publisher_ReplicationTest_Data.png
 
-14.3 Create the Transactional Publication
+11.3 Create the Transactional Publication
 
 A transactional publication was created on RDSB3SERVER1.
 
@@ -114,7 +114,7 @@ C:\Users\josep\Documents\CreatePublication.sql
 
 Evidence: 04_Transactional_Publication_Success.png
 
-14.4 Snapshot Agent Security Troubleshooting
+11.4 Snapshot Agent Security Troubleshooting
 
 The initial Snapshot Agent execution failed with:
 
@@ -161,7 +161,7 @@ This confirmed that the schema and initial data were successfully prepared for s
 
 Evidence: 05_Snapshot_Agent_Success.png
 
-14.5 Configure the Subscriber
+11.5 Configure the Subscriber
 
 A push subscription was created, with the Distribution Agent running at RDSB3SERVER2.
 
@@ -183,7 +183,7 @@ RDSB3DATABASE11_REPLICA
 
 was created specifically on RDSB3SERVER3.
 
-14.6 Distribution Agent Security
+11.6 Distribution Agent Security
 
 The Distribution Agent was configured to:
 
@@ -222,7 +222,7 @@ GO
 
 The commands completed successfully.
 
-14.7 Create the Subscription
+11.7 Create the Subscription
 
 The New Subscription Wizard was completed using immediate snapshot initialization and a continuously running Distribution Agent.
 
@@ -236,7 +236,7 @@ C:\Users\josep\Documents\NewSubscription.sql
 
 Evidence: 06_Replication_Subscription_Creation_Success.png
 
-14.8 Verify Initial Snapshot Replication
+11.8 Verify Initial Snapshot Replication
 
 On RDSB3SERVER3, the subscription database was queried:
 
@@ -263,7 +263,7 @@ This demonstrated successful snapshot initialization.
 
 Evidence: 07_Initial_Replication_Verified_SERVER3.png
 
-14.9 Verify Live Transactional Replication
+11.9 Verify Live Transactional Replication
 
 To demonstrate that replication continued after initialization, a new transaction was performed only on SERVER1:
 
@@ -319,7 +319,7 @@ SERVER3 Subscriber
 
 Evidence: 09_Live_Transactional_Replication_Verified_SERVER3.png
 
-14.10 Replication Monitor Verification
+11.10 Replication Monitor Verification
 
 SQL Server Replication Monitor was used for final operational verification.
 
